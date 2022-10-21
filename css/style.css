@@ -1,0 +1,26 @@
+.title{
+    margin-top: 30px;
+    color: #000000;
+}
+
+.legenda{
+    margin-top: 20px;
+}
+
+td{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 30px;
+    height: 30px;
+}
+
+#certo{
+    background-color: #d87373;
+    width: 30px;
+    height: 30px;
+}
+
+.table-config{
+    margin-top: 40px;
+    border: 3px solid #000000;
+}

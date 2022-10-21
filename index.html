@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Caça palavras</title>
+</head>
+<body style="min-height: 300px;">
+
+        <h1 class="text-center title">Caça palavras</h1>
+        <h6 class="text-center">Tema: Séries e Filmes</h6>
+        <br>
+        <h6 class="text-center legenda">Top Gun - Sillent Hill - The Hundred - Corra - The Boys - Matrix - Arcane - As branquelas - The Witcher - Lucifer</h4>
+    
+
+    <row>
+    <center><table class="table-config">
+
+        <script>
+            matriz = new Array;
+            matriz = [["D","G","Y","O","C","A","G","L","B","I","L","E","Y","R","U","B","X","C","V","J","L","Ç","I","F","C"], ["H","X","S","G","H","W","O","P","B","Y","T","S","D","F","J","K","L","N","U","G","P","O","T","Y","E"], ["V","X","F","X","Q","S","A","Q","V","T","S","H","W","K","G","S","D","R","S","X","V","G","D","I","T"], ["Z","F","A","B","C","I","J","E","T","S","C","Z","Y","E","S","C","O","R","R","A","A","H","Y","E","H"], ["I","G","S","D","A","L","M","F","E","D","X","O","P","W","T","A","S","H","K","V","S","E","J","C","E"], ["R","S","B","G","O","E","C","L","U","C","I","F","E","R","G","X","U","E","H","D","F","W","J","V","H"], ["C","S","R","I","K","N","U","D","Y","T","X","B","K","A","F","X","G","K","R","W","I","C","S","N","U"], ["X","A","A","C","H","T","B","A","X","H","C","Z","B","K","D","A","Z","V","T","S","K","Z","R","Q","N"], ["J","D","N","D","K","H","X","R","E","E","J","S","A","Z","F","G","J","R","F","H","G","V","I","R","D"], ["C","Y","Q","F","H","I","A","L","L","W","M","U","C","A","L","O","L","X","U","J","G","C","S","A","R"], ["Z","H","U","A","R","L","B","S","J","I","R","W","V","H","L","M","A","T","R","I","X","M","A","T","E"], ["H","S","E","N","W","L","A","B","H","T","M","S","Y","T","S","A","C","V","M","G","W","T","J","S","D"], ["D","A","L","E","S","T","I","B","Z","C","V","H","D","A","L","J","G","Z","D","X","V","N","C","T","A"], ["J","B","A","E","N","A","C","R","A","H","G","D","J","W","A","R","U","B","X","H","S","J","T","E","X"], ["H","E","S","J","A","X","H","K","Y","E","H","N","V","T","H","E","B","O","Y","S","G","D","C","N","A"], ["C","R","E","H","T","S","S","A","G","R","J","S","T","V","X","N","D","G","M","T","S","A","B","O","M"]];
+            binario = new Array;
+            binario = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,0,0,0,1],[0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+
+
+            for(linha = 0; linha < 16; linha++){
+                document.write("<tr>")
+                for(coluna = 0; coluna <25; coluna++){
+                    if(binario[linha][coluna] == 1){
+                        document.write("<td id='certo' class='text-center'>" + matriz[linha][coluna] + "</td>");
+                    }
+                    else{
+                        document.write("<td class='text-center'>" + matriz[linha][coluna] + "</td>");
+                    }
+                }
+                document.write("</tr>");
+            }
+            
+        </script>
+    </table></center>
+    </row>
+
+</body>
+</html>
